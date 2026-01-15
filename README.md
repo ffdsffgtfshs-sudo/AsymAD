@@ -31,7 +31,7 @@ Unzip the file to `./mvtec_anomaly_detection`.
 ### VisA
 
 Download the VisA dataset from [URL](https://github.com/amazon-science/spot-diff).
-Unzip the file to `./VisA/`. Preprocess the dataset to `../VisA_pytorch/` in 1-class mode by their official splitting 
+Unzip the file to `./VisA/`. Preprocess the dataset to `./VisA_pytorch/` in 1-class mode by their official splitting 
 [code](https://github.com/amazon-science/spot-diff).
 
 You can also run the following command for preprocess.
