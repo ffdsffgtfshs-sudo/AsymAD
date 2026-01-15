@@ -5,8 +5,8 @@ Official implementation of the paper:AsymAD_Asymmetric Student-Teacher Network w
 Create a new conda environment and install required packages.
 
 ```
-conda create -n my_env python=3.8.12
-conda activate my_env
+conda create -n asymad python=3.8.12
+conda activate asymad
 pip install -r requirements.txt
 ```
 Experiments are conducted on NVIDIA GeForce RTX 3090 (24GB). Same GPU and package version are recommended. 
@@ -84,10 +84,10 @@ python AsymAD_mvtec.py --data_path ./mvtec_anomaly_detection
 python AsymAD_visa.py --data_path ./VisA/1cls
 ```
 ```
-python AsymAD_mvtec.py --data_path ./Real-IAD
+python AsymAD_realiad.py --data_path ./Real-IAD
 ```
 
-## 3. Model Test
+## 4. Model Test
 You can either retrain the model from scratch or use our pre-trained weights provided below for testing. To do so, unzip the files and place them into the `./checkpoints` folder.
 ### Trained model weights
 | Dataset | Model | Download |
@@ -96,7 +96,7 @@ You can either retrain the model from scratch or use our pre-trained weights pro
 | VisA | DcL | [Google Drive](https://drive.google.com/file/d/12U2aIkyxHrNK9QZ8q8UzhQnAdJXhBLRJ/view?usp=sharing) |
 | Real-IAD | DcL | [Google Drive](https://drive.google.com/file/d/1jSlv6oB_s0fPJKXGoEAfkQ3r3qcJ_pD-/view?usp=sharing) |
 ```
-python dinomaly_mvtec_test.py --data_path ./mvtec_anomaly_detection --checkpoint_dir ./checkpoints
+python AsymAD_mvtec_test.py --data_path ./mvtec_anomaly_detection --checkpoint_dir ./checkpoints
 ```
 ```
 python AsymAD_visa_test.py --data_path ./VisA/1cls --checkpoint_dir ./checkpoints
@@ -107,7 +107,7 @@ python AsymAD_realiad_test.py --data_path ./Real-IAD --checkpoint_dir ./checkpoi
 
 
 
-## 4. Background Interference Injection
+## 5. Background Interference Injection
 To evaluate the robustness of our model against background variations, we provide the code for background interference injection. The results are shown below:
 <img width="2217" height="526" alt="image" src="https://github.com/user-attachments/assets/f916ed7b-b4dd-4107-b484-182d8b3c7416" />
 
